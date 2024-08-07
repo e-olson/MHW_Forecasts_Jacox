@@ -1,0 +1,16 @@
+## Run nmme_ensemble_mhw.py
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=1GB
+#PBS -l walltime=06:00:00
+#PBS -S /bin/bash
+
+echo 'lag:'
+echo $il
+echo 'detrend:'
+echo $detr
+source /home/reo000/myconda
+conda activate py39dc2
+
+cd /home/reo000/MHW/MHW_Forecasts_Jacox
+python nmme_ensemble_mhw.py $il $detr 
+echo 'done'
